@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const swaggerJSDoc = require('express-jsdoc-swagger');
-
+const port = process.env.LOCAL_PORT_API || 3000;
 module.exports = (app) => {
     let env = process.env.NODE_ENV || 'development';
     app.disable('x-powered-by');
@@ -10,8 +10,6 @@ module.exports = (app) => {
 
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
-
-
 
     // Only run docs in development mode
     if (env === 'development') {
@@ -27,27 +25,33 @@ module.exports = (app) => {
             info: {
                 title: 'Taggify Backend Server',
                 version: '1.0.0',
-                description: 'This is a blank [Express](https://expressjs.com/) API backend server.',
+                description:
+                    'This is a blank [Express](https://expressjs.com/) API backend server.',
                 contact: {
                     email: 'dsp-team@taggify.net',
                     name: 'DSP Team',
-                    url: 'https://taggify.net'
+                    url: 'https://taggify.net',
                 },
             },
-            host: `localhost:${process.env.LOCAL_PORT_API}`,
+            host: `localhost:${port}`,
             basePath: '/api',
             schemes: ['http'],
             consumes: ['application/json'],
             produces: ['application/json'],
             servers: [
                 {
-                    url: `http://localhost:${process.env.LOCAL_PORT_API}`,
+                    url: `http://localhost:${port}`,
                     description: 'Development server',
                 },
             ],
-            tags: [ // Add tags to group endpoints
+            tags: [
+                // Add tags to group endpoints
                 {
                     name: 'Home',
+                    description: 'Home endpoint',
+                },
+                {
+                    name: 'Weather',
                     description: 'Home endpoint',
                 },
             ],
@@ -55,7 +59,8 @@ module.exports = (app) => {
             baseDir: __dirname,
             filesPattern: [
                 '../../src/routes/*.js',
-                '../../src/models/*.js'
+                '../../src/models/*.js',
+                '../../src/controllers/*.js',
             ],
         };
 

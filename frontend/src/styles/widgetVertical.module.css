@@ -1,0 +1,62 @@
+.card {
+  margin: 20px;
+  border-top: 1px solid rgb(54, 53, 53);
+  align-items: center;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 5px;
+  justify-self: center;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.header {
+  width: 100%;
+  display: flex;
+  background-color: rgb(54, 53, 53);
+  justify-content: center;
+  align-items: baseline;
+  justify-content: space-around;
+}
+h4 {
+  color: rgb(14, 13, 13);
+}
+
+.condition {
+  color: rgb(14, 13, 13);
+}
+.headerTitle {
+  color: white;
+}
+.headerDate {
+  color: white;
+}
+.imageContainer {
+  margin: auto;
+  max-width: 50px;
+}
+
+.imageContainerH2 {
+  color: rgb(54, 53, 53);
+}
+.image {
+  width: 100%;
+}
+.cardData {
+  justify-content: space-around;
+  display: grid;
+  padding: 10px;
+  text-align: center;
+}
+
+.mainData {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  text-align: center;
+}
+
+.mainDataItem {
+  display: grid;
+  gap: 10px;
+  margin: 0 5px;
+}

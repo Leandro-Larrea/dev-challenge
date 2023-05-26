@@ -19,10 +19,9 @@ const init = () => {
     if (!global.db) {
         global.db = new PrismaClient();
 
-        console.info('Prisma client setup ok')
+        console.info('Prisma client setup ok');
     }
-}
-
+};
 
 /**
  * Get or create a prisma client
@@ -30,13 +29,10 @@ const init = () => {
  * @returns {object} Global or new Prisma client
  */
 const newPrisma = () => {
-    return global.db || new PrismaClient()
-}
-
+    return global.db || new PrismaClient();
+};
 
 module.exports = {
     init,
-    newPrisma
+    newPrisma,
 };
-
-

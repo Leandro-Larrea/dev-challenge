@@ -1,0 +1,38 @@
+.form {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  max-width: 500px;
+  align-items: center;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.buttonContainer {
+  min-width: 80px;
+}
+.itemForm {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 5px;
+  color: 1px solid blue;
+}
+label {
+  color: white;
+  cursor: pointer;
+}
+.input {
+  max-width: 60px;
+  outline: none;
+  padding: 0 3px;
+}
+.itemForm {
+  width: 100px;
+}
+
+@media screen and (max-width: 391px) {
+  .itemForm {
+    flex-direction: column;
+  }
+}

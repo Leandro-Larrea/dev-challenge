@@ -2,8 +2,8 @@
 // The connection string is located in this directory in .env file
 
 datasource db {
-    url      = env("DB_URI")
-    provider = "mysql"
+    url      = env("DB")
+    provider = "postgresql"
 }
 
 generator client {
@@ -11,10 +11,27 @@ generator client {
 }
 
 model User {
-    id          String @id @default(cuid())
-    username    String
-    password    String
-    email       String
-    createdAt   DateTime @default(now())
-    updatedAt   DateTime @default(now())
+    id              String @id @default(cuid())
+    username        String
+    password        String
+    email           String
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @default(now())
+}
+
+model Weather {
+    id              String @id @default(cuid())
+    condition       Json
+    temperature     Float
+    hourOfLecture   String
+    cityName        String
+    lat             String
+    lon             String
+    windMph         Float
+    windDegree      Float
+    pressure        Float
+    humidity        Float
+    feelsLike       Float
+    createdAt       DateTime @default(now())
+    updatedAt       DateTime @default(now())
 }

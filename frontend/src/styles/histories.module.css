@@ -1,0 +1,73 @@
+.historiesContainer {
+  min-height: 520px;
+  border-left: 1px solid rgb(54, 53, 53);
+  padding: 10px;
+  background-color: white;
+  min-width: 300px;
+  max-width: 350px;
+}
+
+.historiesCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  border-bottom: 1px solid rgb(54, 53, 53);
+  background-color: white;
+  padding: 5px 0;
+}
+
+.readingButton {
+  border: none;
+  background-color: transparent;
+  align-self: flex-end;
+}
+.historiesCardBottom {
+  display: flex;
+  justify-content: space-between;
+}
+.readingButton:hover {
+  cursor: pointer;
+  color: rgb(3, 133, 57);
+  cursor: pointer;
+}
+
+.readingNameOff {
+  background-color: rgb(54, 53, 53);
+  padding: 2px;
+  color: white;
+}
+.readingNameOn {
+  background-color: rgb(3, 133, 57);
+  padding: 2px;
+  color: white;
+}
+
+.pageController {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  align-items: center;
+  gap: 10px;
+}
+
+.pageController button {
+  color: rgb(255, 255, 255);
+}
+
+.pageController button:hover {
+  color: rgb(3, 133, 57);
+}
+
+.pageControllerButton {
+  font-size: 25px;
+  background-color: transparent;
+  border: none;
+}
+
+.pageControllerButton:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
