@@ -9,7 +9,7 @@ export const url =
   process.env.REACT_APP_API_URL || "http://localhost:3000/weather";
 
 export default function Home() {
-  const { data, setData, error, setError } = useContext(DataContext);
+  const { data, error } = useContext(DataContext);
 
   return (
     <main className={style.main}>
@@ -24,7 +24,11 @@ export default function Home() {
               <Widget data={data}></Widget>
             </div>
           )}
-          {error && <h2 className={style.error}>Location not found</h2>}
+          {error && (
+            <div className={style.errorContainer}>
+              <h2 className={style.error}>Location not found</h2>
+            </div>
+          )}
         </div>
         <Histories></Histories>
       </div>

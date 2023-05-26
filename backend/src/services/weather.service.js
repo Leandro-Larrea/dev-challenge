@@ -29,7 +29,6 @@ async function get(props) {
         if (!recentUpdated) {
             weatherDb = await fetchAndSave(lat, lon);
         }
-        console.log(weatherDb);
         return weatherDb;
     } catch (error) {
         throw new Error(error.message);
@@ -59,7 +58,6 @@ async function getWeatherReading(id) {
 }
 
 async function fetchAndSave(lat, lon) {
-    console.log('se llamo no joda');
     try {
         const { data } = await axios(
             `https://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${lat},${lon}`
